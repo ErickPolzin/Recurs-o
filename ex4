@@ -1,0 +1,18 @@
+def pertence_a_m(numero):
+  if numero == 2 or numero == 3:
+      return True
+  if numero < 2:
+      return False
+
+  for x in range(2, numero):
+      if numero % x == 0 and pertence_a_m(x) and pertence_a_m(numero // x):
+          return True
+  return False
+
+numeros = [6 , 9 , 16 , 21 , 26 , 54 , 72 , 218]
+
+for numero in numeros:
+  if pertence_a_m(numero):
+      print(f"{numero} pertence à coleção M.")
+  else:
+      print(f"{numero} não pertence à coleção M.")
