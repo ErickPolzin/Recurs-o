@@ -1,0 +1,18 @@
+def populacao_n(n):
+  if n == 0:
+      return 50000  
+  else:
+      return 3 * populacao_n(n - 1)
+
+n = int(input("Digite o número de períodos: "))
+resultado = populacao_n(n)
+print(f"A população no {n}-ésimo período de tempo é: {resultado}")
+
+população = 50000
+leituras = 0
+
+while população <= 200000:
+    população *= 3
+    leituras += 1
+
+print("O número de leituras necessárias para a população exceder 200.000 é:", leituras)
