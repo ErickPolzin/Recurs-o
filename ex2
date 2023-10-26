@@ -1,0 +1,13 @@
+def calcular_pg(a, r, n):
+  if n == 1:
+      return a
+  else:
+      return r * calcular_pg(a, r, n - 1)
+
+a = int(input(f'Digite o primeiro termo da PG: '))
+r = int(input(f'Digite a razão da PG: '))
+n = int(input(f'Digite o número de termos da PG: '))
+
+
+termo_n = calcular_pg(a, r, n)
+print(f"O {n}-ésimo termo da progressão geométrica é: {termo_n}")
