@@ -1,0 +1,19 @@
+def pertence_a_t(numero):
+  if numero == 2:
+      return True
+  elif numero < 2:
+      return False
+  elif numero % 2 == 0:
+      return pertence_a_t(numero // 2)
+  elif (numero - 3) % 2 == 0 and ((numero - 3) // 2) % 3 == 0:
+      return pertence_a_t((numero - 3) // 2)
+  else:
+      return False
+
+numeros = [6, 7, 19, 12]
+
+for numero in numeros:
+  if pertence_a_t(numero):
+      print(f"{numero} não pertence à coleção T.")
+  else:
+      print(f"{numero}  pertence à coleção T.")
