@@ -1,0 +1,16 @@
+x = 1
+
+
+y = 2
+
+
+num_iteracoes = int(input("numero de repetições que você deseja")) 
+somas = []
+
+for i in range(num_iteracoes):
+    x += y 
+    somas.append(x)
+    y += 1 
+
+for i, soma in enumerate(somas):
+    print(f"Iteração {i + 1}: Soma = {soma}")
