@@ -1,0 +1,63 @@
+def S_a(n):
+  if n == 1:
+      print("1", end=' ')
+      return 1
+  else:
+      resultado = 3 * S_a(n - 1)
+      print(resultado, end=' ')
+      return resultado
+n_value = int(input("escreva o numero de repetições que você deseja: "))
+print("Sequência a:")
+S_a(n_value)
+
+
+
+
+def divide_por_dois_ate_zero_com_print(numero):
+  while numero > 0:
+      print(numero)
+      numero = numero // 2  
+num=int(input("escreva o numero desejado: "))
+divide_por_dois_ate_zero_com_print(num)
+
+
+
+def S_c(n, a, b):
+  if n == 1:
+      print(a, end=' ')
+      return a
+  elif n == 2:
+      print(b, end=' ')
+      return b
+  else:
+      result = S_c(n - 2, a, b) + S_c(n - 1, a, b)
+      print(result, end=' ')
+      return result
+
+n_value = int(input("escolha o valor para n: "))
+a_value = int(input("escolha o vaor para a: "))
+b_value = int(input("escreva o valor de b: "))
+print("Sequência c:")
+S_c(n_value, a_value, b_value)
+
+
+def S_d(n, p, q):
+    if n == 1:
+        print(p, end=' ')
+        return p
+    elif n == 2:
+        result = p - q
+        print(result, end=' ')
+        return result
+    else:
+        if n % 2 == 0:
+            result = S_d(n - 1, p, q) + 2 * q
+        else:
+            result = S_d(n - 1, p, q) - 2 * q
+        print(result, end=' ')
+        return result
+n_value = 6  # Escolha um valor de n
+p_value = 10  # Defina o valor de "p"
+q_value = 2   # Defina o valor de "q"
+print("Sequência d:")
+S_d(n_value, p_value, q_value)
