@@ -1,0 +1,23 @@
+def gerar_cadeias_binarias(n):
+  if n == 0:
+      return ['']
+  elif n == 1:
+      return ['0', '1']
+  else:
+      cadeias_menores = gerar_cadeias_binarias(n - 1)
+      result = []
+      for string in cadeias_menores:
+          result.append('0' + string)
+          result.append('1' + string)
+      return result
+
+def cadeias_binarias_zero_impares(n):
+  if n % 2 == 0:
+      return []  
+  else:
+      return gerar_cadeias_binarias(n)
+
+
+n = int(input('Digite o número'))  
+cadeias_zero_impares = cadeias_binarias_zero_impares(n)
+print(cadeias_zero_impares)
