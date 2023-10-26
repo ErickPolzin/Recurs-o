@@ -1,0 +1,14 @@
+def pertence_a_w(cadeia):
+  if len(cadeia) == 1:
+      return cadeia in 'abc'
+  if cadeia.startswith('a') and cadeia.endswith('c'):
+      return pertence_a_w(cadeia[1:-1])
+  return False
+
+cadeias = ['a(b)c', 'a(a(b)c)c', 'a(abc)c', 'a(a(a(a)c)c)c', 'a(aacc)c']
+
+for cadeia in cadeias:
+  if pertence_a_w(cadeia):
+      print(f"A cadeia '{cadeia}' pertence à coleção W.")
+  else:
+      print(f"A cadeia '{cadeia}' não pertence à coleção W.")
