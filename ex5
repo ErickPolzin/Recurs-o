@@ -1,0 +1,21 @@
+def pertence_a_S(cadeia):
+
+  if len(cadeia) <= 1 or (cadeia.count('a') + cadeia.count('b')) == len(cadeia):
+      return True
+
+  
+  if cadeia[0] == 'a' and pertence_a_S(cadeia[1:]):
+      return True
+
+
+  if cadeia[-1] == 'b' and pertence_a_S(cadeia[:-1]):
+      return True
+  return False
+
+cadeias = ['a', 'ab', 'aba', 'aaab', 'bbbbb']
+
+for cadeia in cadeias:
+  if pertence_a_S(cadeia):
+      print(f"A cadeia '{cadeia}' pertence à coleção S")
+  else:
+      print(f"A cadeia '{cadeia}' não pertence à coleção S")
